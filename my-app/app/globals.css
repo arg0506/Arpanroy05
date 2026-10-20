@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-display: var(--font-playfair);
+  --font-sans: var(--font-inter);
+  --font-script: var(--font-dancing);
+}
+
+:root {
+  --bg: #F2F0EB;
+  --surface: #FFFFFF;
+  --surface-card: #FFFFFF;
+  --surface-pill: #FFFFFF;
+  --ink: #111111;
+  --ink-secondary: #666666;
+  --muted: #888888;
+  --border: #E0DED9;
+  --border-card: #EDEAE5;
+  --tag-bg: #EBEBEB;
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
+  --connector: rgba(150, 145, 138, 0.35);
+  --progress: #111111;
+}
+
+.dark {
+  --bg: #0C0C0D;
+  --surface: #141416;
+  --surface-card: #18181B;
+  --surface-pill: #1C1C20;
+  --ink: #F3F3F5;
+  --ink-secondary: #A0A0A8;
+  --muted: #808088;
+  --border: #242429;
+  --border-card: #28282E;
+  --tag-bg: #222228;
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.45);
+  --connector: rgba(255, 255, 255, 0.15);
+  --progress: #F3F3F5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans), Arial, sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  overflow-x: hidden;
+}
+
+.photo-bw {
+  filter: grayscale(1) contrast(1.05);
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 22s linear infinite;
+}
+
+/* ── Scroll Reveal Hardware-Accelerated Classes ─────────────── */
+.reveal-init {
+  opacity: 0;
+  transform: translate3d(0, 26px, 0);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-init {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .animate-spin-slow {
+    animation: none !important;
+  }
+}
