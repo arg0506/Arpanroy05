@@ -76,8 +76,7 @@ export function ContactSection() {
           {/* Right Column: Handshake Illustration */}
           <ScrollReveal delay={220} className="flex items-center justify-center lg:justify-end">
             <div className="relative w-[240px] sm:w-[280px] md:w-[320px] lg:w-[350px] h-[380px] sm:h-[440px] md:h-[500px] flex items-center justify-center group">
-              {/* Subtle ambient backdrop circle */}
-              <div className="absolute w-[280px] md:w-[340px] h-[280px] md:h-[340px] rounded-full bg-[var(--surface-card)]/60 border border-[var(--border)] opacity-60 group-hover:scale-105 transition-transform duration-500 pointer-events-none" />
+
 
               <div className="relative w-full h-full transition-transform duration-300 group-hover:-translate-y-2">
                 <Image

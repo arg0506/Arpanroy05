@@ -29,3 +29,13 @@
   - Scaled down section display headlines from `clamp(34px, 4.8vw, 62px)` to `clamp(26px, 3.6vw, 44px)` across About, Work, Experience, and Contact sections.
   - Reduced body paragraph typography from `text-[16px] md:text-[17px]` to `text-[14px] md:text-[15px]`.
 - **Refine**: Verified with Turbopack (compiled in 649ms) and confirmed clean, balanced layout on `http://localhost:3000`.
+
+### [2026-10-20] - Git Push to Remote Repository
+- **Perceive**: User requested pushing the entire code to GitHub repository `https://github.com/arg0506/Arpanroy05`.
+- **Reason**: Needed to ensure build outputs (`.next`, `node_modules`, log files) were properly excluded, documentation updated, and changes committed cleanly before pushing.
+- **Act**:
+  - Created root `.gitignore` to prevent committing `node_modules/`, `.next/`, and environment secrets.
+  - Authored a comprehensive `README.md` in UTF-8 format.
+  - Staged 62 project files and committed with message `feat: complete editorial portfolio with Next.js 16, dark mode, retro workstation, liquid art footer, and scroll animations`.
+  - Pushed to `origin/main` (`380ce8a..cbe4a96`).
+- **Refine**: Verified `git status` confirmed clean working tree and remote synchronization.

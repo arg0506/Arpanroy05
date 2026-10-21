@@ -201,3 +201,22 @@ Let's build something meaningful.
 ---
 
 © 2026 Arpan Roy. Built with curiosity and a bias toward execution.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

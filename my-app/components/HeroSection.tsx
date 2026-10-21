@@ -29,36 +29,7 @@ function HeroCard({ icon, title, subtitle, className = "", parallaxOffset = 0 }:
   );
 }
 
-/* ── Circular Rotating Stamp Badge ────────────────────────────── */
-function RotatingStampBadge({ scrollY }: { scrollY: number }) {
-  return (
-    <div
-      style={{
-        transform: `rotate(${scrollY * 0.25}deg)`,
-        transition: "transform 0.1s linear",
-      }}
-      className="relative w-20 h-20 select-none pointer-events-none"
-    >
-      <svg viewBox="0 0 100 100" className="w-full h-full animate-spin-slow">
-        <defs>
-          <path
-            id="textCircle"
-            d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
-            fill="none"
-          />
-        </defs>
-        <text className="text-[10px] uppercase tracking-[0.22em] fill-[var(--muted)] font-medium">
-          <textPath href="#textCircle" startOffset="0%">
-            BUILD • GROW • CONNECT •
-          </textPath>
-        </text>
-      </svg>
-      <div className="absolute inset-0 flex items-center justify-center">
-        <SparkleIcon size={14} className="text-[var(--ink)]" />
-      </div>
-    </div>
-  );
-}
+
 
 export function HeroSection() {
   const [scrollY, setScrollY] = useState(0);
@@ -92,7 +63,7 @@ export function HeroSection() {
             loaded ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
           }`}
         >
-          <RotatingStampBadge scrollY={scrollY} />
+          
         </div>
 
         {/* Center Headlines */}

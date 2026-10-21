@@ -203,8 +203,7 @@ export function AboutSection() {
         {/* ── Right – Retro Terminal & Floating Cards ────────── */}
         <ScrollReveal delay={150} className="relative flex items-center justify-center min-h-[420px] sm:min-h-[460px] lg:h-[540px] mt-10 lg:mt-0">
           {/* Subtle ambient backdrop circle */}
-          <div className="absolute w-[320px] sm:w-[400px] lg:w-[440px] h-[320px] sm:h-[400px] lg:h-[440px] rounded-full bg-[var(--surface-card)]/70 border border-[var(--border)] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-colors pointer-events-none" />
-
+      
           {/* Retro PC Setup */}
           <div className="relative z-10 w-[290px] sm:w-[400px] md:w-[450px] lg:w-[480px] xl:w-[510px] aspect-[1588/990] transition-transform duration-500 hover:-translate-y-2 group">
             <Image
@@ -217,46 +216,6 @@ export function AboutSection() {
             />
           </div>
 
-          {/* Floating Cards with subtle scroll parallax */}
-          <FloatingCard
-            icon={<BuildChip />}
-            title="Build"
-            subtitle="Turn ideas into products."
-            className="hidden sm:block top-4 left-0 lg:-left-2 z-20"
-            style={{
-              transform: `translate3d(0, ${-scrollY * 0.05}px, 0)`,
-            }}
-          />
-
-          <FloatingCard
-            icon={<CommunityChip />}
-            title="Community"
-            subtitle="Better together."
-            className="hidden sm:block top-2 right-0 lg:-right-2 z-20"
-            style={{
-              transform: `translate3d(0, ${scrollY * 0.04}px, 0)`,
-            }}
-          />
-
-          <FloatingCard
-            icon={<Web3Chip />}
-            title="Web3"
-            subtitle="Open, global, full of possibilities."
-            className="hidden sm:block bottom-12 left-0 lg:-left-4 z-20"
-            style={{
-              transform: `translate3d(0, ${-scrollY * 0.03}px, 0)`,
-            }}
-          />
-
-          <FloatingCard
-            icon={<GrowthChip />}
-            title="Growth"
-            subtitle="Build. Learn. Scale."
-            className="hidden sm:block bottom-8 right-0 lg:-right-4 z-20"
-            style={{
-              transform: `translate3d(0, ${scrollY * 0.05}px, 0)`,
-            }}
-          />
 
           {/* Handwritten annotation */}
           <div className="absolute -bottom-2 right-4 sm:bottom-0 sm:right-6 font-script text-[18px] sm:text-[20px] text-[var(--muted)] rotate-[-10deg] z-20 leading-tight pointer-events-none select-none">

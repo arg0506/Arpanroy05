@@ -2,7 +2,7 @@
 
 A high-craft editorial portfolio website for Arpan Roy (Software Engineer & Builder), combining brutalist editorial typography, dark/light mode theming, archival artwork showcases, and smooth scroll animations.
 
-![Portfolio Preview](./my-app/public/221090%20(1).jpg)
+![Portfolio Preview](my-app/public/heross.png)
 
 ---
 

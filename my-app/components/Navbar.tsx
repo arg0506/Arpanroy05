@@ -126,10 +126,10 @@ export function Navbar() {
             </button>
 
             <a
-              href="#contact"
+              href="/Arpanroy_resumeup.pdf"
               className="bg-[var(--ink)] text-[var(--bg)] rounded-full px-5 py-2.5 text-[13px] font-medium flex items-center gap-1.5 hover:opacity-85 transition-opacity shadow-sm"
             >
-              Get in touch <span>↗</span>
+              My resume <span>↗</span>
             </a>
           </div>
         </div>
