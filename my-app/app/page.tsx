@@ -5,7 +5,6 @@ import { WorkSection } from "@/components/WorkSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
-import { FooterArt } from "@/components/FooterArt";
 
 export default function Home() {
   return (
@@ -19,7 +18,6 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
-      <FooterArt />
     </>
   );
 }
