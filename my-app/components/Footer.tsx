@@ -25,50 +25,25 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative w-full border-t border-[var(--border)] bg-[var(--bg)] overflow-hidden pt-16 md:pt-20 pb-10 transition-colors duration-300">
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-16 relative z-10">
+    <footer className="w-full border-t border-[var(--border)] bg-[var(--bg)] pt-16 md:pt-20 pb-10 transition-colors duration-300">
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-16">
 
-        {/* ── Call to action ─────────────────────────────────── */}
         <ScrollReveal delay={50}>
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 pb-12 border-b border-[var(--border)]">
-            <div>
-              <div className="inline-flex items-center gap-2.5 mb-5 px-3 py-1.5 rounded-full bg-[var(--surface-card)] border border-[var(--border)] text-xs text-[var(--ink)] shadow-2xs">
+          <div className="grid grid-cols-2 md:grid-cols-12 gap-10 pb-12 border-b border-[var(--border)]">
+
+            {/* Identity */}
+            <div className="col-span-2 md:col-span-4">
+              <p className="font-serif text-3xl text-[var(--ink)]">Arpan Roy</p>
+              <p className="mt-3 text-sm text-[var(--ink-secondary)] leading-relaxed max-w-sm">
+                Software engineer and builder working across Web3, AI and growth.
+              </p>
+              <div className="mt-6 inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-[var(--surface-card)] border border-[var(--border)] text-xs text-[var(--ink)] shadow-2xs">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
                 </span>
                 <span className="font-medium">Available for select projects & roles</span>
               </div>
-              <h2
-                className="font-display font-bold text-[var(--ink)] leading-[1.05] tracking-tight"
-                style={{ fontSize: "clamp(32px, 5vw, 64px)" }}
-              >
-                Have an idea worth building?
-                <br />
-                <em className="font-normal italic text-[var(--ink-secondary)]">Let&apos;s talk.</em>
-              </h2>
-            </div>
-
-            <a
-              href="mailto:arpanroy0506@gmail.com"
-              className="group inline-flex items-center gap-3 self-start md:self-auto px-6 py-3.5 rounded-full bg-[var(--ink)] text-[var(--bg)] text-sm font-medium shadow-lg hover:-translate-y-0.5 transition-all duration-300"
-            >
-              Start a conversation
-              <span className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
-            </a>
-          </div>
-        </ScrollReveal>
-
-        {/* ── Link columns ───────────────────────────────────── */}
-        <ScrollReveal delay={120}>
-          <div className="grid grid-cols-2 md:grid-cols-12 gap-10 py-12">
-
-            {/* Identity */}
-            <div className="col-span-2 md:col-span-4">
-              <p className="font-serif text-2xl text-[var(--ink)]">Arpan Roy</p>
-              <p className="mt-3 text-sm text-[var(--ink-secondary)] leading-relaxed max-w-xs">
-                Software engineer and builder working across Web3, AI and growth.
-              </p>
               <p className="mt-5 font-mono text-[11px] tracking-wider text-[var(--muted)]">
                 Kolkata, IN · GMT+5:30
               </p>
@@ -118,7 +93,7 @@ export function Footer() {
             {/* Direct */}
             <div className="col-span-2 md:col-span-3">
               <h3 className="font-mono text-[11px] uppercase tracking-wider text-[var(--muted)] mb-4">
-                Direct Inquiries
+                Email
               </h3>
               <a
                 href="mailto:arpanroy0506@gmail.com"
@@ -131,7 +106,7 @@ export function Footer() {
         </ScrollReveal>
 
         {/* ── Colophon ───────────────────────────────────────── */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-[var(--border)] text-xs text-[var(--muted)]">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 text-xs text-[var(--muted)]">
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
             <span>© 2026 Arpan Roy. All rights reserved.</span>
             <span className="hidden sm:inline text-[var(--border)]">|</span>
