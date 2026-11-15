@@ -65,7 +65,7 @@ const experiences = [
     org: "Midnight",
     period: "Jul 2026 – Present",
     current: true,
-    logo: null,
+    logo: "/logos/midnight.jpg",
     initials: "M",
     bgColor: "#312E81",
     description:
@@ -92,8 +92,8 @@ export function ExperienceSection() {
               </span>
             </div>
             <h2
-              className="font-display font-bold text-[var(--ink)] leading-[1.02] tracking-tight"
-              style={{ fontSize: "clamp(40px, 6vw, 84px)" }}
+              className="font-display font-bold text-[var(--ink)] leading-[1.12]"
+              style={{ fontSize: "clamp(26px, 3.6vw, 44px)" }}
             >
               The journey
               <br />
@@ -117,35 +117,35 @@ export function ExperienceSection() {
 
                 {/* Index */}
                 <div className="md:col-span-1">
-                  <span className="font-mono text-[12px] text-[var(--muted)]">{exp.index}</span>
+                  <span className="font-mono text-[11px] text-[var(--muted)]">{exp.index}</span>
                 </div>
 
                 {/* Logo + role */}
                 <div className="md:col-span-5 flex items-start gap-5">
                   {exp.logo ? (
-                    <div className="w-16 h-16 flex-shrink-0 rounded-2xl bg-white border border-[var(--border-card)] flex items-center justify-center p-3 shadow-sm group-hover:scale-105 transition-transform duration-300">
+                    <div className="w-12 h-12 flex-shrink-0 rounded-xl bg-white border border-[var(--border-card)] flex items-center justify-center p-2 shadow-sm overflow-hidden group-hover:scale-105 transition-transform duration-300">
                       <Image
                         src={exp.logo}
                         alt={`${exp.org} logo`}
-                        width={44}
-                        height={44}
+                        width={32}
+                        height={32}
                         unoptimized
                         className="w-full h-full object-contain"
                       />
                     </div>
                   ) : (
                     <div
-                      className="w-16 h-16 flex-shrink-0 rounded-2xl flex items-center justify-center text-white font-mono font-bold text-[15px] group-hover:scale-105 transition-transform duration-300"
+                      className="w-12 h-12 flex-shrink-0 rounded-xl flex items-center justify-center text-white font-mono font-bold text-[12px] group-hover:scale-105 transition-transform duration-300"
                       style={{ backgroundColor: exp.bgColor }}
                     >
                       {exp.initials}
                     </div>
                   )}
                   <div className="min-w-0">
-                    <h3 className="font-display font-bold text-[var(--ink)] text-[24px] md:text-[28px] leading-tight">
+                    <h3 className="font-semibold text-[var(--ink)] text-[16px] leading-tight">
                       {exp.role}
                     </h3>
-                    <p className="text-[var(--ink-secondary)] text-[15px] mt-1.5">{exp.org}</p>
+                    <p className="text-[var(--ink-secondary)] text-[13px] mt-1">{exp.org}</p>
                   </div>
                 </div>
 
@@ -161,7 +161,7 @@ export function ExperienceSection() {
                       <span className="text-[11px] font-mono text-[var(--muted)]">{exp.period}</span>
                     )}
                   </div>
-                  <p className="text-[var(--ink-secondary)] text-[14px] md:text-[15px] leading-relaxed">
+                  <p className="text-[var(--ink-secondary)] text-[13px] leading-relaxed">
                     {exp.description}
                   </p>
                   <div className="flex flex-wrap gap-1.5">
