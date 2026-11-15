@@ -1,43 +1,72 @@
 "use client";
 
+import Image from "next/image";
 import { TagBadge } from "@/components/ui/TagBadge";
 import { SparkleIcon } from "@/components/ui/SparkleIcon";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
+const GITHUB_USER = "https://github.com/arg0506";
+
 const projects = [
   {
-    id: "automa",
-    name: "Automa",
-    initials: "A",
-    bgColor: "#111111",
+    id: "voxis",
+    name: "Voxis",
     description:
-      "Programmable financial infrastructure for autonomous AI agents.",
-    tags: ["Web3", "AI", "Product"],
+      "Zero-knowledge voting DApp on Midnight for anonymous, verifiable governance.",
+    tags: ["TypeScript", "Web3", "ZK"],
+    image: "/projects/voxis.png",
+    liveUrl: "https://voxis-plum.vercel.app",
+    repoUrl: `${GITHUB_USER}/Voxis`,
   },
   {
-    id: "nundina",
-    name: "Nundina Finance",
-    initials: "N",
-    bgColor: "#1B4332",
-    description: "Private Credit Secondary Market.",
-    tags: ["Web3", "DeFi", "Community"],
-  },
-  {
-    id: "kairo",
-    name: "Kairo",
-    initials: "K",
-    bgColor: "#2D3A4A",
-    description: "Exploring liquidity infrastructure for NFT markets.",
-    tags: ["DeFi", "NFT", "Monad"],
-  },
-  {
-    id: "nundina-express",
-    name: "Nundina Express",
-    initials: "NE",
-    bgColor: "#5B21B6",
+    id: "bidforge",
+    name: "BidForge",
     description:
-      "A community waitlist campaign with a train-ticket identity.",
-    tags: ["Community", "Campaign", "Web3"],
+      "Decentralized auction platform with live bid updates and multi-wallet support.",
+    tags: ["TypeScript", "Web3", "Auctions"],
+    image: "/projects/bidforge.png",
+    liveUrl: "https://bid-forge-brjz.vercel.app/",
+    repoUrl: `${GITHUB_USER}/BidForge`,
+  },
+  {
+    id: "orion",
+    name: "Orion",
+    description:
+      "Web3 wallet dashboard on Stellar Testnet with Freighter and real-time balances.",
+    tags: ["TypeScript", "Stellar", "Dashboard"],
+    image: "/projects/orion.png",
+    liveUrl: "https://orion-xi-blond.vercel.app",
+    repoUrl: `${GITHUB_USER}/Orion`,
+  },
+  {
+    id: "flowpilot",
+    name: "Flowpilot",
+    description:
+      "AI workflow automation with Soroban smart contracts and signed audit logs.",
+    tags: ["TypeScript", "AI", "Soroban"],
+    image: "/projects/flowpilot.png",
+    liveUrl: "https://flowpilot-pied.vercel.app",
+    repoUrl: `${GITHUB_USER}/Flowpilot`,
+  },
+  {
+    id: "nutri-mind",
+    name: "Nutri-Mind",
+    description:
+      "AI nutrition assistant giving context-aware food recommendations in real time.",
+    tags: ["HTML", "AI", "Health"],
+    image: "/projects/nutrimind.png",
+    liveUrl: "https://nutri-mind-three.vercel.app",
+    repoUrl: `${GITHUB_USER}/Nutri-Mind`,
+  },
+  {
+    id: "devpulse",
+    name: "DevPulse",
+    description:
+      "Real-time chat and community platform for developers with inline code formatting.",
+    tags: ["TypeScript", "Realtime", "Community"],
+    image: "/projects/devpulse.png",
+    liveUrl: "https://devpulse-lake-kappa.vercel.app",
+    repoUrl: `${GITHUB_USER}/Devpulse`,
   },
 ];
 
@@ -73,9 +102,9 @@ export function WorkSection() {
 
             <ScrollReveal delay={200}>
               <p className="text-[var(--ink-secondary)] text-[14px] md:text-[15px] leading-relaxed max-w-[440px]">
-                A collection of projects I&apos;ve worked on — from Web3 products to
-                community-driven initiatives. Each one is a step towards building
-                useful, open and impactful experiences.
+                A selection of projects from my GitHub, from Web3 products to
+                AI tools. Each one is a step towards building useful, open and
+                impactful experiences.
               </p>
             </ScrollReveal>
           </div>
@@ -106,17 +135,17 @@ export function WorkSection() {
               <span className="text-xs font-medium text-[var(--ink)]">Products</span>
             </div>
 
-            {/* Featured Automa dark card */}
+            {/* Featured Voxis dark card */}
             <ScrollReveal delay={150}>
               <div className="absolute top-[72px] left-[14%] w-[264px] bg-[#111111] dark:bg-[#18181C] border border-white/10 rounded-2xl p-6 shadow-2xl z-10 transition-all duration-300 hover:-translate-y-2 hover:shadow-cyan-500/10">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
-                    <span className="font-display font-bold text-white text-[15px]">A</span>
+                    <span className="font-display font-bold text-white text-[15px]">V</span>
                   </div>
-                  <span className="font-semibold text-white text-[15px]">Automa</span>
+                  <span className="font-semibold text-white text-[15px]">Voxis</span>
                 </div>
                 <p className="text-white/70 text-[13px] leading-relaxed mb-5">
-                  Programmable financial<br />infrastructure for AI agents.
+                  Zero-knowledge voting<br />for anonymous governance.
                 </p>
                 <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-[11px] text-white/80 font-medium">
                   Featured
@@ -151,48 +180,64 @@ export function WorkSection() {
         </div>
 
         {/* ── Project Cards Grid with Staggered Entrance ─────── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((p, index) => (
             <ScrollReveal key={p.id} delay={index * 110}>
-              <div
-                className="group bg-[var(--surface-card)] rounded-2xl border border-[var(--border-card)] p-5 flex flex-col gap-4 shadow-[var(--shadow-card)] hover:shadow-xl hover:-translate-y-2 transition-all duration-300 h-full"
-              >
-                {/* Logo mark */}
-                <div
-                  className="w-11 h-11 rounded-xl flex items-center justify-center text-white font-display font-bold text-[13px] flex-shrink-0 group-hover:scale-105 transition-transform"
-                  style={{ backgroundColor: p.bgColor }}
+              <article className="group bg-[var(--surface-card)] rounded-2xl border border-[var(--border-card)] overflow-hidden flex flex-col shadow-[var(--shadow-card)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full">
+                {/* Screenshot */}
+                <a
+                  href={p.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open ${p.name} live demo`}
+                  className="relative block aspect-[16/10] overflow-hidden border-b border-[var(--border)] bg-[var(--bg)]"
                 >
-                  {p.initials}
-                </div>
+                  <Image
+                    src={p.image}
+                    alt={`${p.name} screenshot`}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  />
+                </a>
 
                 {/* Name + description */}
-                <div className="flex-1">
-                  <h3 className="font-semibold text-[var(--ink)] text-[15px] mb-1.5">
+                <div className="flex flex-col gap-3 p-5 flex-1">
+                  <h3 className="font-semibold text-[var(--ink)] text-[16px]">
                     {p.name}
                   </h3>
-                  <p className="text-[var(--ink-secondary)] text-[13px] leading-relaxed">
+                  <p className="text-[var(--ink-secondary)] text-[13px] leading-relaxed flex-1">
                     {p.description}
                   </p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-1.5">
+                    {p.tags.map((tag) => (
+                      <TagBadge key={tag} label={tag} />
+                    ))}
+                  </div>
                 </div>
 
-                {/* Tags */}
-                <div className="flex flex-wrap gap-1.5">
-                  {p.tags.map((tag) => (
-                    <TagBadge key={tag} label={tag} />
-                  ))}
-                </div>
-
-                {/* Footer */}
-                <div className="flex items-center justify-between pt-3 border-t border-[var(--border)]">
+                {/* Links */}
+                <div className="flex items-center justify-between px-5 py-3.5 border-t border-[var(--border)]">
                   <a
-                    href="#contact"
+                    href={p.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-[13px] text-[var(--ink)] font-medium flex items-center gap-1 group-hover:gap-2 transition-all"
                   >
-                    View project <span className="transition-transform group-hover:translate-x-0.5">→</span>
+                    Live demo <span aria-hidden="true">→</span>
                   </a>
-                  <span className="text-[var(--muted)] text-sm group-hover:text-[var(--ink)] transition-colors">↗</span>
+                  <a
+                    href={p.repoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[13px] text-[var(--muted)] hover:text-[var(--ink)] transition-colors"
+                  >
+                    Source code ↗
+                  </a>
                 </div>
-              </div>
+              </article>
             </ScrollReveal>
           ))}
         </div>
@@ -204,7 +249,15 @@ export function WorkSection() {
               <SparkleIcon size={12} className="text-[var(--muted)]" />
               <div className="w-10 h-px bg-[var(--muted)]" />
               <span className="text-[10px] font-medium tracking-[0.18em] text-[var(--muted)] uppercase">
-                More Projects Coming Soon...
+                More on{" "}
+                <a
+                  href={GITHUB_USER}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[var(--ink)] transition-colors"
+                >
+                  GitHub
+                </a>
               </span>
             </div>
             <span className="text-[11px] text-[var(--muted)] tracking-wider">
